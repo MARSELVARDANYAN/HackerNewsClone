@@ -1,19 +1,5 @@
-import { body } from "express-validator";
 import jwt from "jsonwebtoken";
 import SECRET_KEY from "../.env";
-
-const registerValidation = [
-  body("username")
-    .notEmpty()
-    .withMessage("Username is required")
-    .isLength({ min: 3 })
-    .withMessage("Username must be at least 3 characters long"),
-  body("password")
-    .notEmpty()
-    .withMessage("Password is required")
-    .isLength({ min: 6 })
-    .withMessage("Password must be at least 6 characters long"),
-];
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -33,4 +19,4 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-export { authMiddleware, registerValidation };
+export { authMiddleware };

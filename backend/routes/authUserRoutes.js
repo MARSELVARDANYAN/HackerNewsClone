@@ -1,7 +1,7 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
 import SECRET_KEY from '../.env'
-import { registerValidation } from '../middleware/authMiddleware.js'
+import  registerValidation from '../middleware/registerValidation.js'
 import { validationResult } from 'express-validator'
 import User from '../models/User.js'
 import bcrypt from 'bcrypt'
@@ -9,7 +9,7 @@ import bcrypt from 'bcrypt'
 const authRoutes = express.Router()
 
 
-authRoutes.post("/auth/login", async (req, res) => {
+authRoutes.post("/auth/login",  async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) {

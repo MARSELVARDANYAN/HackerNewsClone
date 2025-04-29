@@ -6,7 +6,7 @@ import comentsRoutes from "./routes/commentsRoutes.js";
 import askRoutes from "./routes/askAndAnswerRoutes.js";
 import showPostRouter from "./routes/showPostRoutes.js";
 import jobsRoutes from "./routes/jobsRoutes.js";
-import authRoutes from "./authorization/authUser.js";
+import authRoutes from "./routes/authUserRoutes.js";
 
 
 const app = express();
