@@ -37,8 +37,6 @@ export const postQuestionComments = (formData) => API.post('/quesComments', form
 
 export const postAsk = (formData) => API.post('/ask', formData);
 
-// export const getQuestionsById = () => API.get('/ask/${id}');
-
 export const getAsk = () => API.get('/ask');
 
 export const getUser = () => API.get('/users');
@@ -61,4 +59,3 @@ export const postComment = (data) => API.post('/comments', data);
 
 export const getComments = (postId) => API.get(`/comments/${postId}`);
 
-// export const createPost = (postData) => API.post('/posts', postData);

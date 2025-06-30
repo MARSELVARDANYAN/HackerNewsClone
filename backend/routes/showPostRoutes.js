@@ -1,9 +1,10 @@
 import express from "express";
 import ShowPage from "../models/ShowPage.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const showPostRoutes = express.Router();
 
-showPostRoutes.post("/createShow", async (req, res) => {
+showPostRoutes.post("/createShow", authMiddleware, async (req, res) => {
   try {
     const { title, url, content, type, authorId } = req.body;
 

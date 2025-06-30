@@ -5,7 +5,7 @@ import User from "../models/User.js";
 
 const postRoutes = express.Router();
 
-postRoutes.get("/posts", async (req, res) => {
+postRoutes.get("/posts", authMiddleware, async (req, res) => {
   try {
     const posts = await Post.find()
       .sort({ createdAt: -1 })
@@ -16,7 +16,7 @@ postRoutes.get("/posts", async (req, res) => {
   }
 });
 
-postRoutes.get("/post/:id", async (req, res) => {
+postRoutes.get("/post/:id", authMiddleware, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {

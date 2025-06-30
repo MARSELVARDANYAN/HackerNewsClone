@@ -14,6 +14,7 @@ const NavBar = () => {
       <Link to="/submit" style={{ marginRight: "10px", color: "black" }}>posts</Link>
       <Link to="/register" style={{ marginRight: "10px", color: "black" }}>register</Link>
       <Link to="/login" style={{ marginRight: "10px", color: "black" }}>login</Link>
+      <Link to="/logout" style={{ marginRight: "100px", color: "black" }}>logout</Link>
     </nav>
   );
 };

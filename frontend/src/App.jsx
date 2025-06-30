@@ -18,6 +18,7 @@ import SingleShowPage from "./pages/SingleShowPage";
 import JobsPage from "./pages/JobsPage";
 import SingleJobPage from "./pages/SingleJobPage";
 import Footer from "./footer/Footer";
+import Logout from "./components/Logout";
 import "./App.css";
 
 const App = () => {
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/submit" element={<Submit />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
         <Footer />
       </Router>

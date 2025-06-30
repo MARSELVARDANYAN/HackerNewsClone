@@ -29,7 +29,7 @@ commentsRoutes.post("/comments", authMiddleware, async (req, res) => {
   }
 });
 
-commentsRoutes.get("/comments/:postId", async (req, res) => {
+commentsRoutes.get("/comments/:postId", authMiddleware, async (req, res) => {
   const { postId } = req.params;
 
   try {

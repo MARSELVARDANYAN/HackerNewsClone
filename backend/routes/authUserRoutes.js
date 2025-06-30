@@ -44,6 +44,7 @@ authRoutes.post("/auth/login",  async (req, res) => {
 });
 
 authRoutes.post("/auth/register", registerValidation, async (req, res) => {
+  console.log("Register request received:", req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -62,7 +63,7 @@ authRoutes.post("/auth/register", registerValidation, async (req, res) => {
     {
       _id: user._id,
     },
-    SECRET_KEY,
+    process.env.SECRET_KEY,
     {
       expiresIn: "30d",
     }
