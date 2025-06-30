@@ -1,6 +1,5 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
-import SECRET_KEY from '../.env'
 import  registerValidation from '../middleware/registerValidation.js'
 import { validationResult } from 'express-validator'
 import User from '../models/User.js'
@@ -27,7 +26,7 @@ authRoutes.post("/auth/login",  async (req, res) => {
       {
         _id: user._id,
       },
-      SECRET_KEY,
+      process.env.SECRET_KEY,
       {
         expiresIn: "7h",
       }
